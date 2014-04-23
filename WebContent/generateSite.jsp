@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>vocab.linkeddata.es</title>
+    <title>Vocabularios para Datos Abiertos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -40,8 +40,8 @@
 
       <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>vocab.linkeddata.es</h1>
-        <p class="lead">Here you can find the list of vocabularies that the <a href = "http://www.oeg-upm.net" target="_blank">Ontology Engineering Group (OEG)</a> is developing and publishing on the Web.</p>
+        <h1>Vocabularios para Datos Abiertos</h1>
+        <p class="lead">En este portal se recoge una lista de vocabularios útiles para la generación de datos abiertos de ciudades en España. Esta lista de vocabularios irá creciendo con los vocabularios que se están desarrollando en el contexto del grupo de trabajo sobre Open Data del Comité AENOR de Normalización CTN178, subcomité SG3 (Gobierno y Movilidad).</p>
       </div>
 
       <hr>
@@ -64,27 +64,27 @@
 			%>
 			<div class="span4">
 	          <h2><a href="<%out.print(currentVocab.uri); %>" target="_blank"><%out.print(currentVocab.title); %></a></h2>
-	          <p><% if (currentVocab.description == null) {
-	        	  		out.print("Can't believe you didn't include a dcterms:description or dcelements:description");
+	          <p style="text-align: justify;"><% if (currentVocab.description == null) {
+	        	  		out.print("Sería recomendable incluir un dcterms:description o dcelements:description.");
 					}
 			        else{
 			        	out.print(currentVocab.description);
 			        }
 	          		 %></p>
-	          <p><% if (currentVocab.cnRDF && currentVocab.cnHTML){
+	          <pstyle="text-align: justify;"><% if (currentVocab.cnRDF && currentVocab.cnHTML){
 	        	  		String rdfURI = currentVocab.uriVapourRDF;
 	        	  		String htmlURI = currentVocab.uriVapourHTML;
-	        	  		out.print("Best practices for content negotiation implemented for <strong>RDF</strong> and <strong>HTML</strong> formats.");
+	        	  		out.print("Implementadas buenas prácticas para negociación de contenidos para los formatos <strong>RDF</strong> y <strong>HTML</strong>.");
 	        	  		//out.print("Content negotiation enabled for <a href = \"" + rdfURI + "\" target=\"_blank\"><strong>RDF</strong></a> and <a href = \"" + htmlURI + "\" target=\"_blank\"><strong>HTML</strong></a> formats.");
 	          		}
 	          		else if (currentVocab.cnRDF && !currentVocab.cnHTML){
 	          			String rdfURI = currentVocab.uriVapourRDF;
-	          			out.print("Best practices for content negotiation implemented for <strong>RDF</strong> format.");
+	          			out.print("Implementadas buenas prácticas para negociación de contenidos para formato <strong>RDF</strong>.");
 	          			//out.print("Content negotiation enabled for <a href = \"" + rdfURI + "\" target=\"_blank\"><strong>RDF</strong></a> format.");
 	          		}
 					else if (!currentVocab.cnRDF && currentVocab.cnHTML){
 						String htmlURI = currentVocab.uriVapourHTML;
-						out.print("Best practices for content negotiation implemented for <strong>RDF</strong> format.");
+						out.print("Implementadas buenas prácticas para negociación de contenidos para formato <strong>HTML</strong>.");
 						//out.print("Content negotiation enabled for <a href = \"" + htmlURI + "\" target=\"_blank\"><strong>RDF</strong></a> format.");
 	          		}
 					else {}
@@ -105,15 +105,13 @@
       <footer>
       
       <div class="row">
-    	<div class="span10">
-    		Team: 
-	        <a href = "http://delicias.dia.fi.upm.es/members/dgarijo/" target="_blank">Daniel Garijo</a> -
-	        <a href = "http://delicias.dia.fi.upm.es/members/mpoveda/" target="_blank">María Poveda</a> -
-	        <a href = "http://delicias.dia.fi.upm.es/members/isantana/" target="_blank">Idafen Santana</a>
+    	<div class="span10">    		
+	        Contacto: ocorcho(at)fi.upm.es
 	        <br>
-	        Contact email: vocab(at)listas.fi.upm.es
+	        Última revisión: Abril 2014
 	        <br>
-	        Latest revision October 2013
+	        Construido con <a href = "http://getbootstrap.com/" target="_blank">Bootstrap</a> utilizando la <a href = "https://github.com/mariapoveda/vocab.linkeddata.es" target="_blank">herramienta</a> desarrollada por <a href = "http://delicias.dia.fi.upm.es/members/mpoveda/" target="_blank">María Poveda</a>.
+	        
         </div>
     	<div class="span2">
     		<a href="http://www.oeg-upm.net/" target="_blank"><img src="images/logoOEG.png" alt="OEG logo" /></a>

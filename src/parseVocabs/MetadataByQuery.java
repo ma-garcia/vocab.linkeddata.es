@@ -40,7 +40,7 @@ public class MetadataByQuery {
 		         	QuerySolution qs = results.next();
 		         	
 		         	RDFNode currentPrefix = qs.getLiteral("vocabPrefix");
-		         	RDFNode currentNs = qs.getLiteral("prefNS");		         	
+//		         	RDFNode currentNs = qs.getLiteral("prefNS");		         	
 		         	RDFNode currentTitleTerms = qs.getLiteral("titleTerms");
 		         	RDFNode currentDescriptionTerms = qs.getLiteral("descriptionTerms");
 		         	RDFNode currentTitleElements = qs.getLiteral("titleElements");
@@ -57,14 +57,14 @@ public class MetadataByQuery {
 			         	}
 		         	}
 		         	
-		         	if (currentNs != null){
-			         	if (i == 0) {
-			         		this.vannNS = qs.getLiteral("prefNS").toString();
-			         	}
-			         	else{
-			         		this.vannNS += " " + qs.getLiteral("prefNS").toString();
-			         	}
-		         	}		         	
+//		         	if (currentNs != null){
+//			         	if (i == 0) {
+//			         		this.vannNS = qs.getLiteral("prefNS").toString();
+//			         	}
+//			         	else{
+//			         		this.vannNS += " " + qs.getLiteral("prefNS").toString();
+//			         	}
+//		         	}		         	
 		         	if (currentTitleTerms != null){
 			         	if (i == 0) {
 			         		this.title = qs.getLiteral("titleTerms").toString();
